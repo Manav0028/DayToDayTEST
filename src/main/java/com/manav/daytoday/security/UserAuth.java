@@ -30,7 +30,7 @@ public class UserAuth extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/addProduct").hasAnyAuthority("ADMIN") // can only add product
                 .antMatchers("/**").hasAnyAuthority("ADMIN", "USER") // can rate and view ratings of products
-                .antMatchers("/**").permitAll()
+                .antMatchers("/**").permitAll() // for testing
                 .anyRequest().authenticated()
                 .and().httpBasic();
 

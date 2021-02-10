@@ -69,7 +69,7 @@ public class RatingController {
                 ProductRating rating = ratingRepository.findByProductIdAndUserId(product.getId(), user.getId()).get();
                 rating.setRating(ratingResponse.getRating());
                 ratingRepository.save(rating);
-                message = "Added";
+                message = "Updated";
             }
         } catch (NoSuchElementException e) {
             e.printStackTrace();
